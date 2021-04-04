@@ -3,9 +3,12 @@ from bs4 import BeautifulSoup
 import steam_profile_cons
 
 steamid = input("Enter steam ID:")
-handle = steam_profile_cons.handler(steamid)
+api_key = input("enter your API key:")
+handle = steam_profile_cons.handler(api_key, steamid)
+print(handle.get_game_id())
 
-appid = get_game_id(appIdList)
+
+# appid = appIdList()
 #here we handle the request to the specified site, and then begin to parse the data
 url ="https://store.steampowered.com/app/245370"
 html_content = requests.get(url).text
